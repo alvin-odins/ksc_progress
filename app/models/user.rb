@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
 
-  attr_accessor :tos
-  validates :tos, presence: true
+  validates :tos, acceptance: true
 
   EMAIL_REGEX = /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
 
@@ -18,5 +17,4 @@ class User < ActiveRecord::Base
   validates :c_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" }
 
   #validates :dob, presence: {type: :date, format: 'dd-mm-yyyy'}
-  
 end
