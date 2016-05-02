@@ -17,5 +17,4 @@ class User < ActiveRecord::Base
   validates :c_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" }
 
   #validates :dob, presence: {type: :date, format: 'dd-mm-yyyy'}
-  
 end

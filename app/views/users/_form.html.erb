@@ -1,65 +1,64 @@
 <%= form_for :user, url: '/users' do |f| %>
-<% if @user.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
- 
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
- <div class="field">
-   <%= f.label :first_name, "First Name" %><br>
-   <%= f.text_field :first_name, placeholder: "First Name" %>
- </div><br>
- <div class="field">
-   <%= f.label :last_name, "Last Name" %><br>
-   <%= f.text_field :last_name, placeholder: "Last Name" %>
- </div><br>
- <div class="field">
-   <%= f.label :email, "Email ID" %><br>
-   <%= f.text_field :email, placeholder: "Email ID" %>
- </div><br>
- <div class="field">
-   <%= f.label :username, "Username" %><br>
-   <%= f.text_field :username, placeholder: "Username" %>
- </div><br>
- <div class="field">
-   <%= f.label :password, "Password" %><br>
-   <%= f.password_field :password, placeholder: 'minimum 8 characters minimium' %>
- </div><br>
- <div class="field">
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this article from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :first_name, "First Name" %><br>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :last_name, "Last Name" %><br>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :email, "Email ID" %><br>
+    <%= f.text_field :email, placeholder: "Email ID" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :username, "Username" %><br>
+    <%= f.text_field :username, placeholder: "Username" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :password, "Password" %><br>
+    <%= f.password_field :password, placeholder: 'minimum 8 characters minimium' %>
+  </div><br>
+  <div class="field">
     <%= f.label :cpassword, 'Confirm Password' %><br>
     <%= f.password_field :cpassword, placeholder: 'minimum 8 characters minimium' %>
   </div><br>
 
- <div class="field">
-   <%= f.label :c_number, "Contact Number" %><br>
-   <%= f.telephone_field :c_number, placeholder: "Contact Number" %>
- </div><br>
-
- <div class="field">
-   <%= f.label :'Gender' %>
-   <%= f.radio_button :gender, 'Male'%> Male
-   <%= f.radio_button :gender, 'Female'%> Female
-   <%= f.radio_button :gender, 'Other'%> Other
- </div><br>
   <div class="field">
-    <%= f.label :dob, "Date of Birth" %><br>
-     
-     <%= f.date_select :dob, order: [:day, :month, :year], prompt: { day: 'DD', month: 'MM', year: 'YYYY' }, start_year: Date.today.year + 9, end_year: Date.today.year - 86 %>
+    <%= f.label :c_number, "Contact Number" %><br>
+    <%= f.telephone_field :c_number, placeholder: "Contact Number" %>
   </div><br>
 
-  
+  <div class="field">
+    <%= f.label :'Gender' %>
+    <%= f.radio_button :gender, 'Male'%> Male
+    <%= f.radio_button :gender, 'Female'%> Female
+    <%= f.radio_button :gender, 'Other'%> Other
+  </div><br>
+  <div class="field">
+    <%= f.label :dob, "Date of Birth" %><br>
+
+    <%= f.date_select :dob, order: [:day, :month, :year], prompt: { day: 'DD', month: 'MM', year: 'YYYY' }, start_year: Date.today.year + 9, end_year: Date.today.year - 86 %>
+  </div><br>
+
+
   <div class="current">
     <%= f.label :curr_address, "Current Address" %><br>
     <%= f.text_field :curr_address, placeholder: "Current Address" %><br>
-    <%= check_box_tag :address, :id => "address" %><%= f.label :address, "Same as permanent address" %>
-    
+    <%= check_box_tag :copy_address %><%= label_tag :copy_address, "Same as permanent address" %>
+
   </div><br>
-  
+
   <div class="permanent">
     <%= f.label :perm_address, "Permanent Address" %><br>
     <%= f.text_field :perm_address, placeholder: "Permanet Address"%>
@@ -86,14 +85,14 @@
 
   <div class="field">
     <!--<%= f.label :source, 'How Did You Hear About Us' %><br>
-    <%= f.select :source, [["Internet Ad","Internet Ad"], ["Google Search","Google Search"], ["Other","Other"]], prompt: "-------------------------" %>-->
-    <%= f.label :'How did you get to know about KSC' %><br>
-    <%= f.radio_button :source, 'Friends'%> Friends
-    <%= f.radio_button :source, 'Social Media' %> Social
-    <%= f.radio_button :source, 'Internet Search' %> Internet Search
-    <%= f.radio_button :source, 'Internet Ad' %> Internet Ad
-    <%= f.radio_button :source, 'Unknown' %> Unknown
-    <%= f.radio_button :source, 'Other' %> Other
+      <%= f.select :source, [["Internet Ad","Internet Ad"], ["Google Search","Google Search"], ["Other","Other"]], prompt: "-------------------------" %>-->
+      <%= f.label :'How did you get to know about KSC' %><br>
+      <%= f.radio_button :source, 'Friends'%> Friends
+      <%= f.radio_button :source, 'Social Media' %> Social
+      <%= f.radio_button :source, 'Internet Search' %> Internet Search
+      <%= f.radio_button :source, 'Internet Ad' %> Internet Ad
+      <%= f.radio_button :source, 'Unknown' %> Unknown
+      <%= f.radio_button :source, 'Other' %> Other
   </div><br>
 
   <div class ="field">
