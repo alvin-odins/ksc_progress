@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ksc</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<header>
+  <div id="langbar" align="right">
+      <select>
+          <option>Language</option>
+          <option value="English">English</option>
+          <option value="French">French</option>
+      </select>
+  </div>
+  <div id="menu" class="clear">
+      <a href="/">
+          <div class="logo"><!--<img height="4%" src="/static/images/ksclogo3.png" alt="logo">--></div>
+      </a>
+      <ul align="center" id="bar">
+          <li><a href="/index">HOME</a></li>
+          <li><a href="/aboutus">ABOUT US</a></li>
+          <li><a href="/forum">FORUM</a></li>
+          <li><a href="/events">EVENTS</a></li>
+          <li><a href="/gallery">GALLERY</a></li>
+          <div class="log_in_log_out_registration"><%= image_tag "add_user.png" %></div>
+      </ul>
+  </div>
+</header>
+
+
+<body>
+
+<%= yield %>
+
+</body>
+
+<footer align="center">
+   <ls>
+       <div align="right">
+
+       </div>
+       <div align="center">
+           <ls>
+               <a id="contactus" href="/contactus">
+                   <font size="3"><b> Contact Us </b></font>
+               </a>
+           </ls>&nbsp;
+           <ls>
+               <a id="partners" href="/partners">
+                   <font size="3"><b>| Our Partners  </b></font>
+               </a>
+           </ls>&nbsp;
+           <ls>
+               <a id="termscons" href="/termscons">
+               <font size="3"><b>| Terms&Conditions </font></a>
+           </ls>&nbsp;
+           <ls>
+               <a id="privacy" href="/privacy">
+                   <font size="3"><b>| Privacy Policy </font></a>
+           </ls>&nbsp;
+           &nbsp;
+           <ls><a href=""><b>| Copyright &copy; 2015 &middot; KnowledgeSharingCampaign &middot; </a></ls>
+       </div>
+   <br>
+   <br>
+</footer>
+
+
+</html>

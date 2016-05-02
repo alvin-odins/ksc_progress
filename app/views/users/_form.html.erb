@@ -1,0 +1,98 @@
+
+  <%= form_for :user, url: '/users' do |f| %>
+
+ <div class="field">
+   <%= f.label :first_name, "First Name" %><br>
+   <%= f.text_field :first_name, placeholder: "First Name" %>
+ </div><br>
+ <div class="field">
+   <%= f.label :last_name, "Last Name" %><br>
+   <%= f.text_field :last_name, placeholder: "Last Name" %>
+ </div><br>
+ <div class="field">
+   <%= f.label :email, "Email ID" %><br>
+   <%= f.text_field :email, placeholder: "Email ID" %>
+ </div><br>
+ <div class="field">
+   <%= f.label :username, "Username" %><br>
+   <%= f.text_field :username, placeholder: "Username" %>
+ </div><br>
+ <div class="field">
+   <%= f.label :password, "Password" %><br>
+   <%= f.password_field :password, placeholder: 'minimum 8 characters minimium' %>
+ </div><br>
+ <div class="field">
+    <%= f.label :cpassword, 'Confirm Password' %><br>
+    <%= f.password_field :cpassword, placeholder: 'minimum 8 characters minimium' %>
+  </div><br>
+
+ <div class="field">
+   <%= f.label :c_number, "Contact Number" %><br>
+   <%= f.telephone_field :c_number, placeholder: "Contact Number" %>
+ </div><br>
+
+ <div class="field">
+   <%= f.label :'Gender' %>
+   <%= f.radio_button :gender, 'Male'%> Male
+   <%= f.radio_button :gender, 'Female'%> Female
+   <%= f.radio_button :gender, 'Other'%> Other
+ </div><br>
+  <div class="field">
+    <%= f.label :dob, "Date of Birth" %><br>
+     
+     <%= f.date_select :dob, order: [:day, :month, :year], prompt: { day: 'DD', month: 'MM', year: 'YYYY' }, start_year: Date.today.year + 9, end_year: Date.today.year - 86 %>
+  </div><br>
+
+  
+  <div class="current">
+    <%= f.label :curr_address, "Current Address" %><br>
+    <%= f.text_field :curr_address, placeholder: "Current Address" %><br>
+    <%= check_box_tag :address, :id => "address" %><%= f.label :address, "Same as permanent address" %>
+    
+  </div><br>
+  
+  <div class="permanent">
+    <%= f.label :perm_address, "Permanent Address" %><br>
+    <%= f.text_field :perm_address, placeholder: "Permanet Address"%>
+  </div><br>
+
+  <div class="field">
+    <%= f.label :country, "country" %><br>
+    <%= f.country_select :country %>
+  </div><br>
+
+  <div class="field">
+    <%= f.label :city, "City" %><br>
+    <%= f.text_field :city, placeholder: "City" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :course, "Course" %><br>
+    <%= f.text_field :course, placeholder: "Course" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :university, "Universty" %><br>
+    <%= f.text_field :university, placeholder: "Universty" %>
+  </div><br>
+
+
+  <div class="field">
+    <!--<%= f.label :source, 'How Did You Hear About Us' %><br>
+    <%= f.select :source, [["Internet Ad","Internet Ad"], ["Google Search","Google Search"], ["Other","Other"]], prompt: "-------------------------" %>-->
+    <%= f.label :'How did you get to know about KSC' %><br>
+    <%= f.radio_button :source, 'Friends'%> Friends
+    <%= f.radio_button :source, 'Social Media' %> Social
+    <%= f.radio_button :source, 'Internet Search' %> Internet Search
+    <%= f.radio_button :source, 'Internet Ad' %> Internet Ad
+    <%= f.radio_button :source, 'Unknown' %> Unknown
+    <%= f.radio_button :source, 'Other' %> Other
+  </div><br>
+
+  <div class ="field">
+    <%= f.check_box :tos %><%= link_to 'Terms and Conditions', '/termscons' %>
+  </div><br>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div><br>
+
+<% end %>
