@@ -48,7 +48,7 @@
   <div class="field">
     <%= f.label :dob, "Date of Birth" %><br>
 
-    <%= f.date_select :dob, order: [:day, :month, :year], prompt: { day: 'DD', month: 'MM', year: 'YYYY' }, start_year: Date.today.year + 9, end_year: Date.today.year - 86 %>
+    <%= f.text_field :dob, class: 'date-picker', placeholder: 'dd/mm/yyyy' %>
   </div><br>
 
 
