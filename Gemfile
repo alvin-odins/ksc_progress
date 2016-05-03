@@ -59,4 +59,6 @@ gem 'rspec'
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-ui-rails'
 
+
 gem "recaptcha", require: "recaptcha/rails"
+

@@ -3,6 +3,21 @@ Rails.application.routes.draw do
   get 'termscons' => 'users#termscons'
   get 'new' => 'users#registersuccess'
 
+  get '/index' => 'users#index'
+  get '/aboutus' => 'users#aboutus'
+  get '/charles' => 'users#charles'
+  get '/contactus' => 'users#contactus'
+  get '/events' => 'users#events'
+  
+  get '/forum' => 'users#forum'
+  get '/gallery' => 'users#gallery'
+
+  get '/partners' => 'users#partners'
+  get '/privacy' => 'users#privacy'
+  get '/rahul' => 'users#rahul'
+
+
+
 
 
   resources :users, only:[:new, :create, :show]

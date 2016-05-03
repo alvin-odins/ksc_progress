@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    logout
     session[:user_id] = nil
     redirect_to '/index', alert: "You Successfully signed out"
   end
